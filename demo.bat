@@ -1,0 +1,246 @@
+@echo off
+REM demo.bat - Interactive demonstration for Windows
+
+cls
+echo ==============================================
+echo     MINI CORE BANKING SYSTEM - DEMO
+echo     Terminal-Based Core Banking
+echo ==============================================
+echo.
+echo DISCLAIMER:
+echo This is a demonstration simulation.
+echo The full implementation includes:
+echo   - File-based persistence
+echo   - Complete transaction ledger
+echo   - Validation and business rules
+echo   - Multi-account management
+echo.
+echo All COBOL source code is available in src/
+echo.
+echo Press any key to start demo...
+pause >nul
+
+cls
+echo === MAIN MENU ===
+echo.
+echo   1 - Load Account
+echo   2 - Create New Account
+echo   9 - Exit
+echo.
+echo Simulating: Create new account...
+timeout /t 1 >nul
+echo.
+echo CREATE NEW ACCOUNT
+echo ------------------
+echo.
+echo Enter holder name: Alice Demo
+echo.
+timeout /t 1 >nul
+echo Account created successfully!
+echo Account ID: 10000001
+echo.
+echo Press any key to continue...
+pause >nul
+
+cls
+echo === MAIN MENU ===
+echo.
+echo Simulating: Load account 10000001...
+timeout /t 1 >nul
+echo.
+echo Account loaded successfully.
+echo.
+echo Press any key to continue...
+pause >nul
+
+cls
+echo === OPERATIONS MENU ===
+echo.
+echo Account ID:      10000001
+echo Holder:          Alice Demo
+echo Status:          ACTIVE
+echo Balance:      R$       0.00
+echo Blocked:      R$       0.00
+echo Available:    R$       0.00
+echo.
+echo   1 - Credit Account
+echo   2 - Debit Account
+echo   3 - Block Funds
+echo   4 - View Ledger
+echo   5 - Back to Main Menu
+echo.
+echo Simulating: Credit R$ 1,000.00...
+timeout /t 1 >nul
+echo.
+echo === CREDIT ACCOUNT ===
+echo.
+echo Enter amount: 1000.00
+echo Enter description: Initial deposit
+echo.
+timeout /t 1 >nul
+echo Credit processed successfully!
+echo Transaction ID: 100000000001
+echo.
+echo Press any key to continue...
+pause >nul
+
+cls
+echo === OPERATIONS MENU ===
+echo.
+echo Account ID:      10000001
+echo Holder:          Alice Demo
+echo Status:          ACTIVE
+echo Balance:      R$   1,000.00
+echo Blocked:      R$       0.00
+echo Available:    R$   1,000.00
+echo.
+echo   1 - Credit Account
+echo   2 - Debit Account
+echo   3 - Block Funds
+echo   4 - View Ledger
+echo   5 - Back to Main Menu
+echo.
+echo Simulating: Debit R$ 250.00...
+timeout /t 1 >nul
+echo.
+echo === DEBIT ACCOUNT ===
+echo.
+echo Enter amount: 250.00
+echo Enter description: ATM withdrawal
+echo.
+timeout /t 1 >nul
+echo Debit processed successfully!
+echo Transaction ID: 100000000002
+echo.
+echo Press any key to continue...
+pause >nul
+
+cls
+echo === OPERATIONS MENU ===
+echo.
+echo Account ID:      10000001
+echo Holder:          Alice Demo
+echo Status:          ACTIVE
+echo Balance:      R$     750.00
+echo Blocked:      R$       0.00
+echo Available:    R$     750.00
+echo.
+echo   1 - Credit Account
+echo   2 - Debit Account
+echo   3 - Block Funds
+echo   4 - View Ledger
+echo   5 - Back to Main Menu
+echo.
+echo Simulating: Block R$ 100.00...
+timeout /t 1 >nul
+echo.
+echo === BLOCK FUNDS ===
+echo.
+echo Enter amount to block: 100.00
+echo Enter description: Hotel authorization
+echo.
+timeout /t 1 >nul
+echo Funds blocked successfully!
+echo Transaction ID: 100000000003
+echo.
+echo Press any key to continue...
+pause >nul
+
+cls
+echo === OPERATIONS MENU ===
+echo.
+echo Account ID:      10000001
+echo Holder:          Alice Demo
+echo Status:          ACTIVE
+echo Balance:      R$     750.00
+echo Blocked:      R$     100.00
+echo Available:    R$     650.00
+echo.
+echo Notice how:
+echo   - Balance stays at R$ 750.00
+echo   - Blocked increased to R$ 100.00
+echo   - Available decreased to R$ 650.00
+echo.
+echo This demonstrates the difference between:
+echo   - Ledger Balance (total in account)
+echo   - Available Balance (what can be withdrawn)
+echo.
+echo Press any key to continue...
+pause >nul
+
+cls
+echo === TRANSACTION LEDGER (SIMULATED) ===
+echo.
+echo Ledger for Account 10000001:
+echo ----------------------------------------------------------------------
+echo ID          ^| Timestamp      ^| Type    ^| Amount    ^| Balance After
+echo ----------------------------------------------------------------------
+echo 1000000001  ^| 20260113143000 ^| CREDIT  ^| +1000.00  ^| 1000.00
+echo 1000000002  ^| 20260113143030 ^| DEBIT   ^|  -250.00  ^|  750.00
+echo 1000000003  ^| 20260113143100 ^| BLOCK   ^|  -100.00* ^|  750.00
+echo ----------------------------------------------------------------------
+echo.
+echo * BLOCK doesn't change ledger balance, only available balance
+echo.
+echo Key Points:
+echo   - Ledger is immutable (append-only)
+echo   - Every operation is recorded
+echo   - Balance transitions are tracked
+echo   - Timestamp provides audit trail
+echo.
+echo Press any key to continue...
+pause >nul
+
+cls
+echo ==============================================
+echo     DEMONSTRATION COMPLETE
+echo ==============================================
+echo.
+echo What you just saw:
+echo.
+echo 1. Account Creation
+echo    - Auto-generated ID (10000001)
+echo    - Initial balance R$ 0.00
+echo.
+echo 2. Credit Operation
+echo    - Deposited R$ 1,000.00
+echo    - Balance increased
+echo.
+echo 3. Debit Operation
+echo    - Withdrew R$ 250.00
+echo    - Balance decreased
+echo    - Validates sufficient funds
+echo.
+echo 4. Block Operation
+echo    - Blocked R$ 100.00
+echo    - Balance unchanged
+echo    - Available balance reduced
+echo.
+echo 5. Ledger View
+echo    - Immutable transaction log
+echo    - Complete audit trail
+echo.
+echo ==============================================
+echo.
+echo This simulation demonstrates the core concepts.
+echo The actual implementation includes:
+echo.
+echo   [X] COBOL source code (src/)
+echo   [X] File-based persistence
+echo   [X] Transaction processing
+echo   [X] Business rule validation
+echo   [X] Indexed file access
+echo   [X] Sequential ledger logging
+echo.
+echo To build and run the real system:
+echo   1. Install GnuCOBOL for Windows
+echo   2. Run build.bat
+echo   3. Run run.bat
+echo.
+echo See README.md for details.
+echo.
+echo ==============================================
+echo     Thank you for reviewing this project
+echo ==============================================
+echo.
+pause

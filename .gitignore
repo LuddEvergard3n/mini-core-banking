@@ -1,0 +1,42 @@
+# Mini Core Banking System - Git Ignore
+
+# Compiled executables
+bin/
+*.exe
+*.out
+
+# Data files (runtime generated)
+data/
+*.dat
+
+# COBOL compiler intermediates
+*.o
+*.so
+*.obj
+*.lib
+*.lst
+*.lis
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Backup files
+*.bak
+*.backup
+backup/
+*.tar.gz
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
