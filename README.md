@@ -2,6 +2,11 @@
 
 Terminal-based core banking system implementation in COBOL.
 
+[![COBOL](https://img.shields.io/badge/COBOL-Core%20logic-005CA5?logo=ibm&logoColor=white)](https://gnucobol.sourceforge.io/)
+[![GnuCOBOL](https://img.shields.io/badge/GnuCOBOL-Compiler-A42E2B?logo=gnu&logoColor=white)](https://gnucobol.sourceforge.io/)
+[![Terminal](https://img.shields.io/badge/Interface-Terminal-4D4D4D?logo=gnubash&logoColor=white)](#running)
+[![Storage](https://img.shields.io/badge/Storage-Indexed%20files-6B7280)](#file-formats)
+
 ## What This Is
 
 A functional demonstration of core banking concepts implemented as a terminal application. Uses COBOL for business logic and file-based persistence. No web interfaces, no databases, just terminal and files.
